@@ -37,7 +37,7 @@ def plot_stacked_bar_chart(data):
         ax.bar_label(p, label_type='center')
 
     # Configurar etiquetas y título
-    ax.set_xlabel('Mes', fontsize=12)
+    # ax.set_xlabel('Mes', fontsize=12)
     ax.set_ylabel('Número de Posts', fontsize=10)
     ax.set_title('Número de Posts por Mes', fontsize=10)
     plt.xticks(rotation=45)
