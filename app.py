@@ -27,7 +27,7 @@ def plot_stacked_bar_chart(data):
     # Configurar los colores
     colors = ['skyblue', 'coral', 'yellowgreen', 'lightcoral', 'cyan']
 
-    fig, ax = plt.subplots(figsize=(5, 2))  # Ajustar el tamaño de la gráfica
+    fig, ax = plt.subplots(figsize=(4, 2))  # Ajustar el tamaño de la gráfica
 
     # Iterar por cada categoría para apilar las barras
     for i, category in enumerate(categories):
@@ -38,18 +38,28 @@ def plot_stacked_bar_chart(data):
 
     # Configurar etiquetas y título
     # ax.set_xlabel('Mes', fontsize=12)
-    ax.set_ylabel('Número de Posts', fontsize=10)
-    ax.set_title('Número de Posts por Mes', fontsize=10)
+    ax.set_ylabel('Número de Posts', fontsize=8)
+    ax.set_title('Número de Posts por Mes', fontsize=8)
+
+    # Configurar el tamaño de los ticks del eje X y Y
+    ax.tick_params(axis='x', labelsize=8)  # Tamaño de los valores en el eje X
+    ax.tick_params(axis='y', labelsize=8)  # Tamaño de los valores en el eje Y
+    # Mostrar la leyenda con un tamaño personalizado
+
     plt.xticks(rotation=45)
 
     # Mostrar la leyenda
-    ax.legend()
+    ax.legend(fontsize=6.5)  # Tamaño de la leyenda
+
 
     # Mostrar la gráfica en Streamlit
     st.pyplot(fig)
+    
+    # Guardar en archivo
+    plt.savefig('grap.png')
 
 def main():
-    st.title("Gráfica de Posts por Mes (Stacked Bar Chart)")
+    # st.title("Gráfica de Posts por Mes (Stacked Bar Chart)")
     data = fetch_data()
     
     if data:
