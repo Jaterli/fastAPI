@@ -28,7 +28,7 @@ def plot_stacked_bar_chart(data):
     # Configurar los colores
     colors = ['skyblue', 'coral', 'yellowgreen', 'lightcoral', 'cyan']
 
-    fig, ax = plt.subplots(figsize=(2, 0.8))  # Ajustar el tamaño de la gráfica
+    fig, ax = plt.subplots(1,1, figsize = (2,1))  # Ajustar el tamaño de la gráfica
 
     # Iterar por cada categoría para apilar las barras
     for i, category in enumerate(categories):
@@ -51,7 +51,7 @@ def plot_stacked_bar_chart(data):
     plt.xticks(rotation=45)
 
     # Mostrar la leyenda
-    ax.legend(fontsize=6)  # Tamaño de la leyenda
+    ax.legend(fontsize=5)  # Tamaño de la leyenda
 
 
     # Mostrar la gráfica en Streamlit
