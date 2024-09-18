@@ -33,19 +33,19 @@ def plot_stacked_bar_chart(data):
     # Iterar por cada categoría para apilar las barras
     for i, category in enumerate(categories):
         counts = [data[category].get(month, 0) for month in months]  # Obtener los valores para cada mes
-        p = ax.bar(months, counts, bottom=bottom, label=category, width=0.3, color=colors[i % len(colors)])  # Agregar la barra
+        p = ax.bar(months, counts, bottom=bottom, label=category, width=0.2, color=colors[i % len(colors)])  # Agregar la barra
         bottom += np.array(counts)  # Actualizar el bottom para la próxima barra
-        ax.bar_label(p, label_type='center', fontsize=10)
+        ax.bar_label(p, label_type='center', fontsize=12)
         
 
     # Configurar etiquetas y título
     # ax.set_xlabel('Mes', fontsize=12)
-    ax.set_ylabel('Número de Posts', fontsize=12)
-    ax.set_title('Número de Posts por Mes', fontsize=12)
+    ax.set_ylabel('Número de Posts', fontsize=16)
+    ax.set_title('Número de Posts por Mes', fontsize=16)
 
     # Configurar el tamaño de los ticks del eje X y Y
-    ax.tick_params(axis='x', labelsize=10)  # Tamaño de los valores en el eje X
-    ax.tick_params(axis='y', labelsize=10)  # Tamaño de los valores en el eje Y
+    ax.tick_params(axis='x', labelsize=12)  # Tamaño de los valores en el eje X
+    ax.tick_params(axis='y', labelsize=12)  # Tamaño de los valores en el eje Y
     # Mostrar la leyenda con un tamaño personalizado
 
     # Ajusta la rotación y la alineación de las etiquetas del eje x (meses) para mejorar la legibilidad y evitar que se superpongan.
@@ -55,7 +55,7 @@ def plot_stacked_bar_chart(data):
     # plt.subplots_adjust(left=0.1, bottom=0.3, right=0.9, top=0.9)
 
     # Mostrar la leyenda
-    ax.legend(fontsize=11)  # Tamaño de la leyenda
+    ax.legend(fontsize=12)  # Tamaño de la leyenda
 
 
     # Mostrar la gráfica en Streamlit
