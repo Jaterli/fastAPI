@@ -5,10 +5,18 @@ name: Ejecutar código Python diariamente
 on:
   schedule:    
     - cron: '0 12 * * *'  # Todos los días a las 12:00 UTC
-  workflow_dispatch: 
+  workflow_dispatch:
     inputs:
       logLevel:
-        description: 'Manually Trigger' 
+        description: 'Log level'
+        required: true
+        default: 'Manually Trigger'
+        type: choice
+        options:
+          - Manually Trigger
+          - information
+          - debug
+          - warning
   # push: # Siempre que se haga un push en la branch
   #   branches: [main]  
 
