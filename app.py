@@ -2,7 +2,6 @@ import requests
 import streamlit as st
 import matplotlib.pyplot as plt
 import numpy as np
-import os
 
 # URL de la API FastAPI
 API_URL = "https://raw.githubusercontent.com/Jaterli/jtlblog/main/public/data/postsByMonth.json"
@@ -53,7 +52,7 @@ def plot_stacked_bar_chart(data):
     plt.xticks(rotation=45, ha="right")
 
     # Ajustar manualmente los márgenes usando subplots_adjust
-    # plt.subplots_adjust(0.5,0.5,0.5,0.5) # left=None, bottom=None, right=None, top=None, wspace=None, hspace=None
+    # plt.subplots_adjust(left=0.1, bottom=0.3, right=0.9, top=0.9)
 
     # Mostrar la leyenda
     ax.legend(fontsize=10)  # Tamaño de la leyenda
@@ -61,10 +60,6 @@ def plot_stacked_bar_chart(data):
 
     # Mostrar la gráfica en Streamlit
     st.pyplot(fig)
-
-    # Si ya existe el archivo, se elimina
-    if os.path.exists('grap.png'):
-        os.remove('grap.png')
 
     # Guardar en archivo
     plt.savefig('grap.png', bbox_inches='tight')
