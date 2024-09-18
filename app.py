@@ -28,37 +28,41 @@ def plot_stacked_bar_chart(data):
     # Configurar los colores
     colors = ['skyblue', 'coral', 'yellowgreen', 'lightcoral', 'cyan']
 
-    fig, ax = plt.subplots(1,1, figsize = (2,1))  # Ajustar el tamaño de la gráfica
-
+    fig, ax = plt.subplots(1,1, figsize = (6,4))  # Ajustar el tamaño de la gráfica
+    
     # Iterar por cada categoría para apilar las barras
     for i, category in enumerate(categories):
         counts = [data[category].get(month, 0) for month in months]  # Obtener los valores para cada mes
         p = ax.bar(months, counts, bottom=bottom, label=category, width=0.3, color=colors[i % len(colors)])  # Agregar la barra
         bottom += np.array(counts)  # Actualizar el bottom para la próxima barra
-        ax.bar_label(p, label_type='center', fontsize=6)
+        ax.bar_label(p, label_type='center', fontsize=10)
         
 
     # Configurar etiquetas y título
     # ax.set_xlabel('Mes', fontsize=12)
-    ax.set_ylabel('Número de Posts', fontsize=7)
-    ax.set_title('Número de Posts por Mes', fontsize=7)
+    ax.set_ylabel('Número de Posts', fontsize=12)
+    ax.set_title('Número de Posts por Mes', fontsize=12)
 
     # Configurar el tamaño de los ticks del eje X y Y
-    ax.tick_params(axis='x', labelsize=7)  # Tamaño de los valores en el eje X
-    ax.tick_params(axis='y', labelsize=7)  # Tamaño de los valores en el eje Y
+    ax.tick_params(axis='x', labelsize=10)  # Tamaño de los valores en el eje X
+    ax.tick_params(axis='y', labelsize=10)  # Tamaño de los valores en el eje Y
     # Mostrar la leyenda con un tamaño personalizado
 
-    plt.xticks(rotation=45)
+    # Ajusta la rotación y la alineación de las etiquetas del eje x (meses) para mejorar la legibilidad y evitar que se superpongan.
+    plt.xticks(rotation=45, ha="right")
+
+    # Ajustar manualmente los márgenes usando subplots_adjust
+    # plt.subplots_adjust(0.5,0.5,0.5,0.5) # left=None, bottom=None, right=None, top=None, wspace=None, hspace=None
 
     # Mostrar la leyenda
-    ax.legend(fontsize=5)  # Tamaño de la leyenda
+    ax.legend(fontsize=10)  # Tamaño de la leyenda
 
 
     # Mostrar la gráfica en Streamlit
     st.pyplot(fig)
-    
+
     # Guardar en archivo
-    plt.savefig('grap.png')
+    plt.savefig('grap.png', bbox_inches='tight')
 
 def main():
     # st.title("Gráfica de Posts por Mes (Stacked Bar Chart)")
