@@ -55,7 +55,7 @@ def plot_stacked_bar_chart(data):
     # plt.subplots_adjust(left=0.1, bottom=0.3, right=0.9, top=0.9)
 
     # Mostrar la leyenda
-    ax.legend(fontsize=10)  # Tamaño de la leyenda
+    ax.legend(fontsize=11)  # Tamaño de la leyenda
 
 
     # Mostrar la gráfica en Streamlit
