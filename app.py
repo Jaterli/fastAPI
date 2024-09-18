@@ -2,6 +2,7 @@ import requests
 import streamlit as st
 import matplotlib.pyplot as plt
 import numpy as np
+import os
 
 # URL de la API FastAPI
 API_URL = "https://raw.githubusercontent.com/Jaterli/jtlblog/main/public/data/postsByMonth.json"
@@ -60,6 +61,10 @@ def plot_stacked_bar_chart(data):
 
     # Mostrar la gráfica en Streamlit
     st.pyplot(fig)
+
+    # Si ya existe el archivo, se elimina
+    if os.path.exists('grap.png'):
+        os.remove('grap.png')
 
     # Guardar en archivo
     plt.savefig('grap.png', bbox_inches='tight')
