@@ -3,11 +3,11 @@ name: Ejecutar código Python diariamente
 # Definir cuándo se ejecutará la acción (cron expression para todos los días a las 12:00 UTC)
 
 on:
-  schedule:
-    #- cron: '0 12 * * *'  # Todos los días a las 12:00 UTC
-    - cron: '*/5  * * * *'
+  schedule:    
+    - cron: '0 12 * * *'  # Todos los días a las 12:00 UTC
+  workflow_dispatch:  
   # push: # Siempre que se haga un push en la branch
-  #   branches: [main]
+  #   branches: [main]  
 
 # Definir los jobs
 jobs:
