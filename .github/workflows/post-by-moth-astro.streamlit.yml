@@ -14,9 +14,9 @@ on:
         type: choice
         options:
           - Manually Trigger
-          - information
-          - debug
-          - warning
+          - Information
+          - Debug
+          - Warning
   # push: # Siempre que se haga un push en la branch
   #   branches: [main]  
 
