@@ -5,7 +5,11 @@ name: Ejecutar código Python diariamente
 on:
   schedule:    
     # - cron: '0 12 * * *'  # Todos los días a las 12:00 UTC    
+<<<<<<< HEAD
     - cron: '0 23 * * 5'    # Ejecuta el workflow todos los viernes a las 23:00 UTC (medianoche en Madrid en invierno)
+=======
+    - cron: '0 23 * * 5'    
+>>>>>>> 450ac01864f270a80fa7e85c3195f8b678ead001
   workflow_dispatch:
     inputs:
       logLevel:
