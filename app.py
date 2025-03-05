@@ -20,8 +20,8 @@ def fetch_data():
 def plot_stacked_bar_chart(data):
     # Obtener todas las categorías y los meses
     categories = list(data.keys())
-    months = list(next(iter(data.values())).keys())  # Usamos la primera categoría para obtener los meses
-
+    # Usamos todas las categorías para obtener los meses
+    months = sorted(set(month for category in data.values() for month in category.keys()))
     # Crear un array de ceros para el valor inicial del bottom
     bottom = np.zeros(len(months))
 
