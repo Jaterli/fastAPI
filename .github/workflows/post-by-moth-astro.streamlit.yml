@@ -4,7 +4,8 @@ name: Ejecutar código Python diariamente
 
 on:
   schedule:    
-    - cron: '0 12 * * *'  # Todos los días a las 12:00 UTC
+    # - cron: '0 12 * * *'  # Todos los días a las 12:00 UTC    
+    - cron: '0 23 * * 5'    
   workflow_dispatch:
     inputs:
       logLevel:
