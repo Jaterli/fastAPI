@@ -28,7 +28,7 @@ def plot_stacked_bar_chart(data):
     # Configurar los colores
     colors = ['skyblue', 'coral', 'yellowgreen', 'lightcoral', 'cyan']
 
-    fig, ax = plt.subplots(1,1, figsize = (6,4))  # Ajustar el tamaño de la gráfica
+    fig, ax = plt.subplots(1, 1, figsize=(6, 4))  # Ajustar el tamaño de la gráfica
     
     # Iterar por cada categoría para apilar las barras
     for i, category in enumerate(categories):
@@ -37,9 +37,8 @@ def plot_stacked_bar_chart(data):
         bottom += np.array(counts)  # Actualizar el bottom para la próxima barra
         
         # Mostrar etiquetas solo si el valor es mayor que 0
-        for bar, count in zip(p, counts):
-            if count > 0:
-                ax.bar_label(bar, label_type='center', fontsize=12)
+        labels = [str(count) if count > 0 else "" for count in counts]  # Crear etiquetas solo para valores > 0
+        ax.bar_label(p, labels=labels, label_type='center', fontsize=12)  # Aplicar las etiquetas
         
 
     # Configurar etiquetas y título
