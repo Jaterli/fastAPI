@@ -35,7 +35,11 @@ def plot_stacked_bar_chart(data):
         counts = [data[category].get(month, 0) for month in months]  # Obtener los valores para cada mes
         p = ax.bar(months, counts, bottom=bottom, label=category, width=0.2, color=colors[i % len(colors)])  # Agregar la barra
         bottom += np.array(counts)  # Actualizar el bottom para la próxima barra
-        ax.bar_label(p, label_type='center', fontsize=12)
+        
+        # Mostrar etiquetas solo si el valor es mayor que 0
+        for bar, count in zip(p, counts):
+            if count > 0:
+                ax.bar_label(bar, label_type='center', fontsize=12)
         
 
     # Configurar etiquetas y título
