@@ -42,8 +42,8 @@ def plot_stacked_bar_chart(data):
         
 
     # Configurar etiquetas y título
-    ax.set_ylabel('Número de Posts', fontsize=16)
-    ax.set_title('Número de Posts por Mes', fontsize=16)
+    ax.set_ylabel('Nº de publicaciones', fontsize=16)
+    ax.set_title('Nº de publicaciones por Mes', fontsize=16)
 
     # Configurar el tamaño de los ticks del eje X y Y
     ax.tick_params(axis='x', labelsize=12)  # Tamaño de los valores en el eje X
@@ -62,7 +62,7 @@ def plot_stacked_bar_chart(data):
     plt.savefig('grap.png', bbox_inches='tight')
 
 def main():
-    st.title("Gráfica de Posts por Mes (Stacked Bar Chart)")
+    st.title("Gráfica de publicaciones por mes (Stacked Bar Chart)")
     data = fetch_data()
     
     if data:
