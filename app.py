@@ -43,7 +43,7 @@ def plot_stacked_bar_chart(data):
 
     # Configurar etiquetas y título
     ax.set_ylabel('Nº de publicaciones', fontsize=16)
-    ax.set_title('Nº de publicaciones por Mes', fontsize=16)
+    ax.set_title('Meses', fontsize=16)
 
     # Configurar el tamaño de los ticks del eje X y Y
     ax.tick_params(axis='x', labelsize=12)  # Tamaño de los valores en el eje X
