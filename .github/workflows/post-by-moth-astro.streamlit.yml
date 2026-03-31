@@ -1,10 +1,9 @@
-name: Ejecutar código Python diariamente
+name: Post by month - Astro Streamlit
 
 # Definir cuándo se ejecutará la acción (cron expression para todos los días a las 12:00 UTC)
 
 on:
   schedule:    
-    # - cron: '0 12 * * *'  # Todos los días a las 12:00 UTC    
     - cron: '0 23 * * 5'  
   workflow_dispatch:
     inputs:
@@ -61,7 +60,7 @@ jobs:
           if git diff --cached --quiet; then
             echo "No changes to commit";
           else
-            git commit -m "Updated graph"
+            git commit -m "Update grap.png - $(date +'%Y-%m-%d %H:%M:%S')"
             git push
           fi
         if: success()  # Solo hacer commit si el script se ejecuta correctamente
