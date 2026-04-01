@@ -28,7 +28,7 @@ def plot_stacked_bar_chart(data):
     # Configurar los colores
     colors = ['skyblue', 'coral', 'yellowgreen', 'lightcoral', 'cyan']
 
-    fig, ax = plt.subplots(1, 1, figsize=(8, 4))  # Ajustar el tamaño de la gráfica
+    fig, ax = plt.subplots(1, 1, figsize=(10, 6))  # Ajustar el tamaño de la gráfica
     
     # Iterar por cada categoría para apilar las barras
     for i, category in enumerate(categories):
