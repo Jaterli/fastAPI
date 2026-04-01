@@ -28,7 +28,7 @@ def plot_stacked_bar_chart(data):
     # Configurar los colores
     colors = ['skyblue', 'coral', 'yellowgreen', 'lightcoral', 'cyan']
 
-    fig, ax = plt.subplots(1, 1, figsize=(6, 4))  # Ajustar el tamaño de la gráfica
+    fig, ax = plt.subplots(1, 1, figsize=(8, 4))  # Ajustar el tamaño de la gráfica
     
     # Iterar por cada categoría para apilar las barras
     for i, category in enumerate(categories):
@@ -42,12 +42,12 @@ def plot_stacked_bar_chart(data):
         
 
     # Configurar etiquetas y título
-    ax.set_ylabel('Nº de publicaciones', fontsize=16)
-    ax.set_title('Meses', fontsize=16)
+    ax.set_ylabel('Nº de publicaciones', fontsize=14)
+    ax.set_title('Meses', fontsize=14)
 
     # Configurar el tamaño de los ticks del eje X y Y
-    ax.tick_params(axis='x', labelsize=12)  # Tamaño de los valores en el eje X
-    ax.tick_params(axis='y', labelsize=12)  # Tamaño de los valores en el eje Y
+    ax.tick_params(axis='x', labelsize=10)  # Tamaño de los valores en el eje X
+    ax.tick_params(axis='y', labelsize=10)  # Tamaño de los valores en el eje Y
 
     # Ajusta la rotación y la alineación de las etiquetas del eje x (meses) para mejorar la legibilidad y evitar que se superpongan.
     plt.xticks(rotation=45, ha="right")
